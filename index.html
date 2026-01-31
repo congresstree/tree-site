@@ -1,71 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grow Mango Tree 🎋</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #87cefa; /* sky blue */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<title>Mango Tree Grow</title>
 
-        #seed {
-            width: 100px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        #seed:hover {
-            transform: scale(1.1);
-        }
+<style>
+body {
+    text-align: center;
+    background: #e6f2ff;
+    font-family: Arial, sans-serif;
+}
 
-        #tree {
-            width: 0;
-            overflow: hidden;
-            transition: width 2s ease-in-out;
-        }
+#seed {
+    width: 120px;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: transform 0.3s;
+}
+#seed:hover {
+    transform: scale(1.1);
+}
 
-        /* Tree shapes with simple CSS */
-        #tree svg {
-            width: 300px;
-        }
-    </style>
+#tree {
+    width: 0;
+    margin-top: 20px;
+    transition: width 2s ease-in-out;
+}
+</style>
 </head>
+
 <body>
 
-    <h2>Click the Mango Seed to Grow a Tree!</h2>
-    <img id="seed" src="https://i.imgur.com/zLeYx1x.png" alt="Mango Seed">
+<h2>Click the Seed 🌱</h2>
 
-    <!-- Mango Tree (hidden until click) -->
-    <div id="tree">
-        <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
-            <!-- trunk -->
-            <rect x="90" y="150" width="20" height="100" fill="#8B4513" />
-            <!-- leaves -->
-            <circle cx="100" cy="120" r="60" fill="#228B22"/>
-            <!-- mango fruits -->
-            <circle cx="70" cy="100" r="10" fill="#FFA500"/>
-            <circle cx="130" cy="110" r="10" fill="#FFA500"/>
-            <circle cx="100" cy="80" r="10" fill="#FFA500"/>
-        </svg>
-    </div>
+<!-- Seed Image -->
+<img id="seed" src="seed.png" alt="Seed">
 
-    <script>
-        const seed = document.getElementById("seed");
-        const tree = document.getElementById("tree");
+<br>
 
-        seed.addEventListener("click", () => {
-            tree.style.width = "300px";  // grow tree
-            seed.style.display = "none"; // hide seed
-        });
-    </script>
+<!-- Tree Image -->
+<img id="tree" src="tree.jpg" alt="Tree">
+
+<script>
+const seed = document.getElementById("seed");
+const tree = document.getElementById("tree");
+
+seed.onclick = function() {
+    tree.style.width = "300px";   // tree grows
+    seed.style.display = "none";  // seed disappears
+};
+</script>
 
 </body>
 </html>
